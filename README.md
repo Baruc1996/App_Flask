@@ -18,13 +18,6 @@ Estrutura do Projeto:
     projeto/: Contém os arquivos principais do aplicativo Flask.
     instance/: Pasta que contém o banco de dados SQLite com os registros de livros.
 
-Como Executar:
-
-    Clone o repositório para sua máquina local.
-    Certifique-se de ter o Python instalado.
-    Instale as dependências listadas no arquivo requirements.txt.
-    Execute o aplicativo usando python app.py.
-
 Contribuições:
 
 Contribuições são bem-vindas! Sinta-se à vontade para propor melhorias, corrigir problemas ou adicionar novas funcionalidades.
