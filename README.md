@@ -16,7 +16,7 @@ Tecnologias Utilizadas:
 Estrutura do Projeto:
 
     projeto/: Contém os arquivos principais do aplicativo Flask.
-    instance/: Pasta que contém o banco de dados SQLite com os registros de livros.
+    instance/: Pasta que contém o banco de dados SQLite com os registros de livros, conteúdos e notas.
 
 Contribuições:
 
