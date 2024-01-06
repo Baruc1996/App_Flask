@@ -1,16 +1,45 @@
 {% extends 'base.html' %}
 {% block conteudo %}
-    <h2 style="text-align: center;">Integrando HTML ao Flask</h2>
+    <h2 style="text-align: center;">Lista de conteúdos</h2>
     <hr>
     <form class="form-group" action="{{url_for('principal')}}" method="POST">
-        <label>Conteudo</label>
+        <label>Conteúdo</label>
         <input class="form-control" type="text" name="conteudo">
+        <label>Descrição</label>
+        <input class="form-control" type="text" name="descricao">
         <button class="btn btn-success">Adicionar</button>
     </form>
     <br>
-    <ol class="list-group list-group-numbered">
-        {% for conteudo in conteudos %}
-        <li class="list-group-item">{{conteudo}}</li>
-        {% endfor %}
-    </ol>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Conteúdo</th>
+                <th>Descrição</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for conteudo in conteudos %}
+            <tr>
+                <td>{{conteudo.nome}}</td>
+                <td>{{conteudo.descricao}}</td>
+                <td>
+                    <a href="{{url_for('edit_conteudo', id=conteudo.id)}}" class="btn btn-secondary btn-xs">Editar</a>
+                    <a href="{{url_for('remove_conteudo', id=conteudo.id)}}" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja excluir esse conteúdo?')">Excluir</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <!-- Adicione esta parte para exibir a paginação -->
+    {% if conteudos.has_prev %}
+        <a href="{{ url_for('principal', page=conteudos.prev_num) }}">Anterior</a>
+    {% else %}
+        Conteúdos Listados
+    {% endif %}
+    {% if conteudos.has_next %}
+        <a href="{{ url_for('principal', page=conteudos.next_num) }}">Próxima</a>
+    {% else %}
+        Conteúdos Listados
+    {% endif %}
 {% endblock conteudo %}

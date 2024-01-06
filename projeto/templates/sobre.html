@@ -2,7 +2,7 @@
 {% block conteudo %}
     <h2 style="text-align: center;">Notas dos alunos</h2>
     <hr>
-    <form class="form-group" action="{{url_for('diario')}}" method="POST">
+    <form class="form-group" action="{{url_for('add_nota')}}" method="POST">
         <label>Aluno</label>
         <input class="form-control" type="text" name="aluno" required>
         <label>Nota</label>
@@ -10,16 +10,36 @@
         <button class="btn btn-success">Adicionar</button>
     </form>
     <br>
-        {% for registro in registros %}
-        <p class="d-inline-flex gap-1">
-            <a class="btn btn-secondary" data-bs-toggle="collapse" href="#collapse_{{registro.aluno}}" role="button" aria-expanded="false" aria-controls="collapse_{{registro.aluno}}">
-                {{registro.aluno}}
-            </a>
-          </p>
-          <div class="collapse" id="collapse_{{registro.aluno}}">
-            <div class="card card-body">
-                {{registro.nota}}
-            </div>
-          </div>
-        {% endfor %}
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Aluno</th>
+                <th>Nota</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for registro in registros %}
+            <tr>
+                <td>{{registro.nome}}</td>
+                <td>{{registro.nota}}</td>
+                <td>
+                    <a href="{{url_for('edit_nota', id=registro.id)}}" class="btn btn-secondary btn-xs">Editar</a>
+                    <a href="{{url_for('remove_nota', id=registro.id)}}" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja excluir essa nota?')">Excluir</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <!-- Adicione esta parte para exibir a paginação -->
+    {% if registros.has_prev %}
+        <a href="{{ url_for('diario', page=registros.prev_num) }}">Anterior</a>
+    {% else %}
+        Notas Listados
+    {% endif %}
+    {% if registros.has_next %}
+        <a href="{{ url_for('diario', page=registros.next_num) }}">Próxima</a>
+    {% else %}
+        Notas Listados
+    {% endif %}
 {% endblock %}

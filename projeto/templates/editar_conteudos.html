@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+    <h2 class="text-center">Editar Conteudo</h2>
+    <hr>
+    <form action="{{url_for('edit_conteudo', id=descricao.id)}}" method="POST">
+        <label>Descricao</label>
+        <input type="text" name="descricao" required>
+        <button class="btn btn-success">Atualizar</button>
+    </form>
+{% endblock conteudo %}
