@@ -35,11 +35,11 @@
     {% if registros.has_prev %}
         <a href="{{ url_for('diario', page=registros.prev_num) }}">Anterior</a>
     {% else %}
-        Notas Listados
+        Notas Listadas
     {% endif %}
     {% if registros.has_next %}
         <a href="{{ url_for('diario', page=registros.next_num) }}">Próxima</a>
     {% else %}
-        Notas Listados
+        Notas Listadas
     {% endif %}
 {% endblock %}
