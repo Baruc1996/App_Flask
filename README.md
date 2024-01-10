@@ -1,6 +1,7 @@
 App Flask - Lista de Livros e Filmes
 
 Este projeto é um aplicativo web usando Flask em Python que oferece funcionalidades para listar livros, mostrar informações sobre filmes, gerenciar um diário de notas de alunos e listagem de conteúdos.
+
 Funcionalidades Principais:
 
     Listagem de Livros: Os usuários podem visualizar uma lista de livros cadastrados no sistema, incluindo detalhes como nome, descrição e valor.
