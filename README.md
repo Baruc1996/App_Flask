@@ -1,25 +1,44 @@
-App Flask - Lista de Livros e Filmes
+# Projeto de Aplicação Flask para Gerenciamento de Livros e Conteúdos
 
-Este projeto é um aplicativo web usando Flask em Python que oferece funcionalidades para listar livros, mostrar informações sobre filmes, gerenciar um diário de notas de alunos e listagem de conteúdos.
+Este é um projeto de uma aplicação web desenvolvida com o framework Flask. A aplicação permite o gerenciamento de livros, conteúdos, filmes e notas de alunos. Ela foi projetada para oferecer funcionalidades como cadastro, atualização, listagem e exclusão de registros. O sistema utiliza SQLite como banco de dados e está organizado em diferentes módulos.
 
-Funcionalidades Principais:
+## Funcionalidades Principais
 
-    Listagem de Livros: Os usuários podem visualizar uma lista de livros cadastrados no sistema, incluindo detalhes como nome, descrição e valor.
-    Listagem de Filmes: O aplicativo consome a API do The Movie Database (TMDb) para exibir informações sobre filmes, incluindo títulos, sinopses e notas.
-    Listagem de conteúdos: Os usuários podem visualizar e cadastrar uma lista de conteúdos (ex: cursos e  descrição) que foi cadastrado no sistema.
-    Diário de Notas: Os usuários podem inserir notas associadas aos nomes dos alunos, armazenando e exibindo esses registros.
+- **Gerenciamento de Livros**: Permite adicionar, listar, atualizar e excluir livros.
+- **Gerenciamento de Conteúdos**: Permite criar, editar e remover diferentes tipos de conteúdos.
+- **Gerenciamento de Filmes**: Listagem de filmes por categorias, como "Mais Populares", "Animação", entre outros.
+- **Gerenciamento de Notas**: Cadastro de notas dos alunos, com possibilidade de edição e exclusão.
 
-Tecnologias Utilizadas:
+## Tecnologias Utilizadas
 
-    Flask: Framework web em Python utilizado para criar o aplicativo.
-    Flask-SQLAlchemy: Integração do SQLAlchemy com o Flask para manipulação do banco de dados SQLite.
-    Bootstrap: Utilizado para o design e estilo das páginas HTML.
+- **Flask**: Framework web para Python.
+- **SQLAlchemy**: ORM para integração com bancos de dados.
+- **Bootstrap**: Framework de estilização para criação de uma interface amigável.
+- **SQLite**: Banco de dados utilizado para armazenar as informações.
 
-Estrutura do Projeto:
+## Como Rodar o Projeto
 
-    projeto/: Contém os arquivos principais do aplicativo Flask.
-    instance/: Pasta que contém o banco de dados SQLite com os registros de livros, conteúdos e notas.
+1. Clone o repositório:
+    ```bash
+    git clone https://github.com/seu-usuario/seu-repositorio.git
+    ```
+2. Instale as dependências:
+    ```bash
+    pip install -r requirements.txt
+    ```
+3. Inicie o servidor Flask:
+    ```bash
+    python -m flask --app projeto run --debug
+    ```
 
-Contribuições:
+4. Acesse a aplicação no navegador:
+    ```
+    http://localhost:5000
+    ```
 
-Contribuições são bem-vindas! Sinta-se à vontade para propor melhorias, corrigir problemas ou adicionar novas funcionalidades.
+## Imagens do Projeto em Execução
+
+![Descrição da Imagem](./images/listaConteudos.png)
+![Descrição da Imagem](./images/listaFilmes.png)
+![Descrição da Imagem](./images/listaLivros.png)
+![Descrição da Imagem](./images/notasAlunos.png)
